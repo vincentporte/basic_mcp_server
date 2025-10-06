@@ -1,0 +1,44 @@
+[project]
+name = "basic_mcp_server"
+version = "0.0.1"
+description = "testing mcp_server"
+authors = []
+license = {}
+requires-python = ">=3.13"
+readme = "README.md"
+dependencies = [
+    "mcp>=1.16.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-asyncio>=1.2.0",
+    "ruff>=0.13.3",
+    "ty>=0.0.1a21",
+]
+
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.lint]
+# see prefixes in https://beta.ruff.rs/docs/rules/
+select = [
+    "F",  # pyflakes
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "I",  # isort
+    "UP",  # pyupgrade
+    "TID",  # flake8-tidy-imports
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["mcp_servers"]
+lines-after-imports = 2
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ty.rules]
+division-by-zero = "warn"
+deprecated = "error"
