@@ -66,4 +66,6 @@ This project is provided as-is with no explicit license.
 * [Build an MCP Server in Python with FastMCP](https://thepythoncode.com/article/fastmcp-mcp-client-server-todo-manager)
 * [modelcontextprotocol.io - Build an MCP Server](https://modelcontextprotocol.io/docs/develop/build-serverhttps://modelcontextprotocol.io/docs/develop/build-server)
 * [modelcontextprotocol.io - Build an MCP Client](https://modelcontextprotocol.io/docs/develop/build-client)
-* [pypi MCP lib](https://pypi.org/project/mcp/)
+* [pypi - MCP lib](https://pypi.org/project/mcp/)
+* [pypi - CLI for MCP Client for Ollama - An easy-to-use command for interacting with Ollama through MCP](https://pypi.org/project/ollmcp/)
+* [Building a 100% Local MCP Client with Ollama: Secure and Private AI Tool Integration](https://atalupadhyay.wordpress.com/2025/05/21/building-a-100-local-mcp-client-with-ollama-secure-and-private-ai-tool-integration/)
