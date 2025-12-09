@@ -1,2 +1,14 @@
 uv.lock
 __pycache__/
+
+# virtual env
+.venv
+
+# caches
+.ruff_cache
+.pytest_cache
+
+# undesired
+.ropeproject
+.vscode
+
