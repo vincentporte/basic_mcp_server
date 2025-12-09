@@ -1,4 +1,27 @@
-CUSTOMERS_TABLE = {
+from typing import TypedDict
+
+
+class Product(TypedDict):
+    name: str
+    price: float
+    stock: int
+
+
+class Order(TypedDict):
+    customer_id: str
+    date: str
+    status: str
+    total: float
+    items: list[str]
+
+
+class Customer(TypedDict):
+    name: str
+    email: str
+    phone: str
+
+
+CUSTOMERS_TABLE: dict[str, Customer] = {
     "CUST123": {
         "name": "Alice Johnson",
         "email": "alice@example.com",
@@ -11,7 +34,7 @@ CUSTOMERS_TABLE = {
     },
 }
 
-ORDERS_TABLE = {
+ORDERS_TABLE: dict[str, Order] = {
     "ORD1001": {
         "customer_id": "CUST123",
         "date": "2024-04-01",
@@ -35,7 +58,7 @@ ORDERS_TABLE = {
     },
 }
 
-PRODUCTS_TABLE = {
+PRODUCTS_TABLE: dict[str, Product] = {
     "SKU100": {"name": "Wireless Mouse", "price": 29.99, "stock": 42},
     "SKU200": {"name": "Keyboard", "price": 59.99, "stock": 18},
     "SKU300": {"name": "USB-C Cable", "price": 15.50, "stock": 77},

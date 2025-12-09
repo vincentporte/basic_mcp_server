@@ -1,7 +1,7 @@
 import asyncio
 
 from mcp.server.fastmcp import FastMCP
-from transactional_db import CUSTOMERS_TABLE, ORDERS_TABLE, PRODUCTS_TABLE
+from transactional_db import CUSTOMERS_TABLE, ORDERS_TABLE, PRODUCTS_TABLE, Order
 
 
 mcp = FastMCP("state_full_server")
@@ -92,7 +92,7 @@ async def get_customer_ids_by_name(customer_name: str) -> list[str]:
 @mcp.tool()
 async def get_orders_by_customer_id(
     customer_id: str,
-) -> dict[str, dict[str, str]]:
+) -> dict[str, Order]:
     """
     Retrieve orders associated with a specific customer ID.
 
