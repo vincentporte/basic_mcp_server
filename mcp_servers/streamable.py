@@ -8,7 +8,15 @@ mcp = FastMCP("state_full_server")
 
 @mcp.tool()
 async def get_customer_info(customer_id: str) -> str:
-    """Search for a customer using their unique identifier"""
+    """
+    Retrieve information about a specific customer.
+
+    Args:
+        customer_id (str): The unique identifier of the customer to retrieve.
+
+    Returns:
+        str: A string containing the customer's information, or an error message if not found.
+    """
     await asyncio.sleep(1)
     customer_info = CUSTOMERS_TABLE.get(customer_id)
 
@@ -19,7 +27,15 @@ async def get_customer_info(customer_id: str) -> str:
 
 @mcp.tool()
 async def get_order_details(order_id: str) -> str:
-    """Get details about a specific order"""
+    """
+    Retrieve detailed information about a specific order.
+
+    Args:
+        order_id (str): The unique identifier of the order to retrieve.
+
+    Returns:
+        str: A formatted string containing the order's details, or an error message if not found.
+    """
     await asyncio.sleep(1)
     order = ORDERS_TABLE.get(order_id)
     if not order:
@@ -37,7 +53,15 @@ async def get_order_details(order_id: str) -> str:
 
 @mcp.tool()
 async def check_inventory(product_name: str) -> str:
-    """Search inventory for a product by product name"""
+    """
+    Search the inventory for a product by name.
+
+    Args:
+        product_name (str): The name of the product to search for.
+
+    Returns:
+        str: A list of products that match the search query, or a message indicating no matches were found.
+    """
     await asyncio.sleep(1)
     matches = []
     for sku, product in PRODUCTS_TABLE.items():
@@ -49,7 +73,15 @@ async def check_inventory(product_name: str) -> str:
 
 @mcp.tool()
 async def get_customer_ids_by_name(customer_name: str) -> list[str]:
-    """Get customer IDs by using a customer's full name"""
+    """
+    Search for customer IDs by using a full name.
+
+    Args:
+        customer_name (str): The full name of the customer to search for.
+
+    Returns:
+        list[str]: A list of customer IDs that match the search query.
+    """
     await asyncio.sleep(1)
     return [
         cust_id
@@ -61,7 +93,15 @@ async def get_customer_ids_by_name(customer_name: str) -> list[str]:
 async def get_orders_by_customer_id(
     customer_id: str,
 ) -> dict[str, dict[str, str]]:
-    """Get orders by customer ID"""
+    """
+    Retrieve orders associated with a specific customer ID.
+
+    Args:
+        customer_id (str): The unique identifier of the customer to retrieve orders for.
+
+    Returns:
+        dict[str, dict[str, str]]: A dictionary mapping order IDs to their respective order details.
+    """
     await asyncio.sleep(1)
     return {
         order_id: order
